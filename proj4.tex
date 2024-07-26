@@ -1,0 +1,144 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm, top=3cm, text={17cm, 24cm}]{geometry}
+\usepackage{times}
+\usepackage[unicode]{hyperref}
+\usepackage{amsmath}
+\hypersetup{colorlinks = true, hypertexnames = false}
+
+\begin{document}
+
+\begin{titlepage}
+        \begin{center}
+            \Huge
+			\textsc{Vysoké učení technické v~Brně} \\
+			\huge
+			\textsc{Fakulta informačních technologií} \\
+			\vspace{\stretch{0.382}} % zarovnani na fibo
+			\LARGE
+			Typografie a~publikování\,--\,4.~projekt \\
+			\Huge
+			Bibliografické citace
+			\vspace{\stretch{0.618}} % zarovnani na fibo
+		\end{center}
+
+		{\Large
+			\today
+			\hfill
+			Petr Vitula
+		}
+\end{titlepage}
+
+\section{Systém \LaTeX}
+
+\subsection{Co je to \LaTeX ?}
+
+\LaTeX{} je především prostředí/systém pro tvorbu dokumentů, můžete to chápat jako obdobu pro souborový formát jako je Word, LibreOffice či HTML. Je to i jeden z nejstarších způsobů (formátů) pro tvorbu dokumentů (je založeny na systému pro formátování dokumentů \TeX z roku 1978). Zajímavý je tím, že k vytváření složitě formátovaných dokumentů vám bude stačit běžný textový editor.\cite{365tipu2018}
+
+
+\subsection{Proč používat \LaTeX ?}
+
+Obrovská síla \LaTeX u se projevuje zejména při psaní matematických vzorců a při vytváření matematických dokumentů obecně. Psaní vzorců v programech s grafickým rozhraním (Word, OO Writer, atd.) je velmi zdlouhavé kvůli nutnosti používat myš pro výběr z rozsáhlých menu. V LaTeXovém dokumentu jsou naproti tomu formátovací značky přímo součástí textu a ač se to na první pohled nezdá, je mnohem pohodlnější pamatovat si několik textových značek, než pozice elementů v grafickém menu.
+
+TeX i LaTeX vynikají obrovskou přesností. Když v dokumentu specifikujeme, že mezi dvěma slovy má být mezera 1 centimetr, můžeme si být jisti, že po vytištění bude na papíře mezera přesně takto široká.
+
+Další obrovskou výhodou (která často předčí i možnost sázet matematické vzorce) je možnost vytváření vlastních maker. Výroba běžných maker není vůbec složitá a v případě potřeby máme k dispozici velmi silný vyjadřovací prostředek.\cite{Martinek2010}
+
+\subsection{Instalace}
+
+Pro práci tedy potřebujeme dvě věci: program na překlad souborů .tex (ze vstupního souboru vytvoří výstupní) a textový editor na psaní souborů .tex. Pokud máte počítač s Windows postupujte takto:
+
+\begin{itemize}
+    \item Na překlad si nainstalujte TexLive zde (klikněte na odkaz install-tl-windows.exe).
+    \item Jako editor si nainstalujte zase Texmaker zde.
+\end{itemize}
+
+Více informací jak postupovat při instalaci najdeme zde \cite{Vyfuk2024}
+\noindent Texlive zabírá cca 3 GB, neboť obsahuje všechna možná rozšíření zvaná balíčky, které mnohdy obsahují svá vlastní písma nebo glyfy. Po instalaci tento program zůstane na vašem disku a v pozadí bude dělat svou práci, už se o něj nikdy nebudete muset starat.
+
+\noindent Texmaker je program, ve kterém se budete pohybovat při sázení dokumentů a budete s ním nejvíce pracovat.
+
+\subsection{Styly stránek}
+Systém \LaTeX \hspace{0.1em} nabízí tři předdefinované kombinace záhlaví/paty stránek --- tzv. stránkové styly. Parametr style příkazu: 
+\vspace{12pt}
+
+\verb|\pagestyle{style}|
+\vspace{12pt}
+
+\begin{flushleft}
+definuje, který ze stránkových stylů se užije. Předdefinované styly stránek mohou být, jak je uvedeno v \cite{Zmitko2015}:
+\end{flushleft}
+
+
+\begin{itemize}
+    \item plain - tiskne čísla stránek na spodním okraji stránky ve středu paty stránky. Toto je základní stánkový styl.
+    \item headings - tiskne jméno aktuální kapitoly a číslo stránky v záhlaví každé stránky a pata stránky zůstává prázdná.
+    \item empty - nastavuje prázdné záhlaví i patu stránky.
+\end{itemize}
+
+
+\subsection{Práce v \LaTeX u}
+
+Práce se systémem \LaTeX{} připomíná programování, jelikož zahrnuje tři hlavní kroky, jak je popsáno v \cite{Rybicka2003}:
+\begin{enumerate}
+\item psaní (úprava) zdrojového textu,
+\item překlad -- vysázení,
+\item prohlížení.
+\end{enumerate}
+
+\subsection{Matematické prostředí }
+
+Základní prvky a výrazy zapisujeme většinou intuitivní stejným způsobem,
+jako bychom je psali například rukou či v jiném plain-text editoru. To znamená, že například pro mocniny užíváme zápis ve tvaru $ a ^ b$, odmocniny
+zapisujeme $\sqrt[x]{y}$, zlomky $\frac{x}{y}$ a takto bychom mohli pokračovat dále. Většina těchto výrazů je zcela intuitivní a jistý nebude dělat
+nikomu žádný problém. Další typy jak dokážeme zobrazit matematické záležitosti najdeme zde. \cite{Vesely2008} Můžeme jednoduše sázet všechny typy závorek, znaky a symboly viz. \cite{Olsak2014}
+
+
+\subsection{Algoritmy}
+Pomocí \LaTeX u máme možnost prezentovat algoritmy v pochopitelném prostředí i pro začátečníky viz. \cite{Erickson2019}
+\vspace{1em}
+
+$ \begin{aligned}
+    &\text { \underline{WhoTargetsWhom} }(H t[1 \ldots n]) \text { : }\\
+    &\text { for } j \leftarrow 1 \text { to } n\\
+    &\langle\langle\text { Find the left target } L[j] \text { for hero } j\rangle\\
+    &L[j] \leftarrow \text { NONE }\\
+    &\text { for } i \leftarrow 1 \text { to } j-1\\
+    &\text { if } H t[i]>H t[j]\\
+    &L[j] \leftarrow i\\
+    &\text { (Find the right target } R[j] \text { for hero } j\rangle\rangle\\
+    &R[j] \leftarrow \text { NoNE }\\
+    &\text { for } k \leftarrow n \text { down to } j+1\\
+    &\text { if } H t[k]>H t[j]\\
+    &R[j] \leftarrow k\\
+    &\text { return } L[1 . . n], R[1 . . n]
+\end{aligned} $
+
+
+\subsection{Logika}
+Podobně jako algoritmy můžeme zobrazit i logické příklady a různé další operace viz \cite{Bagheri2024}\vspace{1em} 
+
+If $\Gamma(\bar{x})$ is a face of $S_{\bar{x}}(T)$ and $\bar{y}$ is disjoint from $\bar{x}$, then $\Gamma(\bar{x}, \bar{y}) = \Gamma(\bar{x})$ is a face of $S_{\bar{x} \bar{y}}(T)$.
+
+If $\Gamma_i$ is a face of $S_{\bar{x}}(T)$ for each $i \in I$, then so is $\bigcup_{i \in I} \Gamma_i$ (if satisfiable).
+
+If $\Gamma$ is a face and $\Gamma \models \theta(\bar{x}) \leq 0$, then $\Gamma \cup \{0 \leq \theta(\bar{x})\}$.
+
+
+\subsection{Rovnice}
+Fyzika \LaTeX u též nebude dělat problém, jako příklad můžeme uvést zobrazení rovnic. Další rovnice najdeme ve článku. \cite{YiXu2024}
+\vspace{1em}
+
+$
+\vec{A}_{\kappa, k_z, m_\gamma, \lambda}^{v o}(\vec{r})=\int \vec{A}_{\vec{k}, \lambda}^{p l}(\vec{r}) a_{m_\gamma \kappa}\left(\vec{k}_{\perp}\right) \frac{d^2 \vec{k}_{\perp}}{(2 \pi)^2}
+$
+
+\newpage
+	\bibliographystyle{czechiso}
+	\renewcommand{\refname}{Literatura}
+	\bibliography{proj4}
+
+ 
+\end{document}
